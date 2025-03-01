@@ -27,6 +27,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \ 
     zip
 
+# Upgrade pip with problem
+RUN python -m pip install --upgrade pip setuptools wheel
+
 # Install packages inside the new environment
 RUN pip install --upgrade --no-cache-dir pip setuptools wheel && \
     pip install --upgrade --no-cache-dir \
