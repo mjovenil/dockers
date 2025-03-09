@@ -24,8 +24,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tmux \
     unzip \
     vim \
-    wget \ 
-    zip
+    wget \
+    zip \
+    make \
+    python3-tk
 
 # Upgrade pip with problem
 RUN python -m pip install --upgrade pip setuptools wheel
@@ -58,6 +60,10 @@ RUN pip install --upgrade --no-cache-dir torch\
     torchtext \
     torchserve --extra-index-url https://download.pytorch.org/whl/cu118 && \
     pip install --upgrade --no-cache-dir lightning && \
+    pip cache purge
+
+# Install TensorFlow (CPU and GPU support)
+RUN pip install --upgrade --no-cache-dir tensorflow && \
     pip cache purge
 
 # Install oases - software for underwater acoustic channel modeling
