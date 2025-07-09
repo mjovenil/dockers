@@ -74,3 +74,6 @@ RUN wget -O oases.tar.gz "https://drive.google.com/uc?export=download&id=1eMH4EN
     cd .. && \
     rm oases.tar.gz && \
     rm -rf ./oases
+
+# Informação de desenvolvimento
+# Autor: jovenil-ipqm | Teste de commit via SSH
